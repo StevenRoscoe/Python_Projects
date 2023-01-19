@@ -1,5 +1,5 @@
 #Create a tip calculator that calculates the total tip each person pays, and round the total tip to two decimal places:
-#My solution
+#My solution - First try
 print("Welcome to the tip calculator.")
 bill = input("What was the total bill? $")
 tip = input("What percentage tip would you like to give? 10, 12, or 15? ")
