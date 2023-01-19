@@ -5,12 +5,12 @@ bill = input("What was the total bill? $")
 tip = input("What percentage tip would you like to give? 10, 12, or 15? ")
 split = input("How many people to split the bill? ")
 
-bill_as_float = float(bill)
-tip_as_int = bill_as_float * int(tip) / 100
-split_as_int = int(split)
-calculated_bill = bill_as_float + tip_as_int
-tip_per_person = round(calculated_bill / split_as_int, 2)
-print(f"Each person should pay: ${tip_per_person}")
+bill_as_float = float(bill)                     #format the bill variable to a float
+tip_as_int = bill_as_float * int(tip) / 100     #change the format of the tip variable to an integer, divide it by 100 to get the percentage needed for the tip, then multiply it by the bill
+split_as_int = int(split)                       #change the split variable to an integer
+calculated_bill = bill_as_float + tip_as_int    #add the tip to the bill to get the calculated bill
+tip_per_person = round(calculated_bill / split_as_int, 2)       #divide the calculated bill by the amount of people the bill was split between, then round it to two decimal places to get the amount needed per person
+print(f"Each person should pay: ${tip_per_person}")             #print the line using an f-string for easier formatting
 
 
 # Simplified solution 
