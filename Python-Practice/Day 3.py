@@ -207,13 +207,13 @@ if condition3:
 #Ex 2:
 print("Welcome to the rollercoaster!")
 height = int(input("What is your height in cm? "))
-bill = 0
+bill = 0                                                          #added in bill variable at 0
 
 if height >= 120:
-    print("You can ride the rollercoaster!")
+    print("You can ride the rollercoaster!")                      
     age = int(input("What is your age? "))
     if age < 12:
-        bill = 5
+        bill = 5                                                  #depending on conditions, the bill will be changed according to age
         print("Child tickets are $5.")
     elif age <= 18:
         bill = 7
@@ -222,9 +222,106 @@ if height >= 120:
         bill = 12
         print("Adult tickets are $12.")
     
-    wants_photo = input("Do you want a photo taken? y or n? ")
+    wants_photo = input("Do you want a photo taken? y or n? ")   #this variable is input at the same level as the age variable
     if wants_photo == "y":
-        bill += 3           #or bill = bill + 3
+        bill += 3           #or bill = bill + 3                  #if they want a photo taken, add 3 dollars to bill
+
+    print(f"You final bill is ${bill}.")
+
+else:
+    print("Sorry but you're not tall enough to ride this ride...")
+
+
+######################################################################################################
+
+# Congratulations, you've got a job at Python Pizza. Your first job is to build an automatic pizza order program.
+
+# Based on a user's order, work out their final bill.
+
+# Small Pizza: $15
+
+# Medium Pizza: $20
+
+# Large Pizza: $25
+
+# Pepperoni for Small Pizza: +$2
+
+# Pepperoni for Medium or Large Pizza: +$3
+
+# Extra cheese for any size pizza: + $1
+
+# 🚨 Don't change the code below 👇
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M, or L ")
+add_pepperoni = input("Do you want pepperoni? Y or N ")
+extra_cheese = input("Do you want extra cheese? Y or N ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+bill = 0
+
+if size == "S":
+    bill += 15                  #for the small pizza, the bill will go up 15 dollars
+elif size == "M":
+    bill += 20                  #for the medium pizza, the bill will go up 20 dollars
+else:
+    bill += 25                  #for everything else, being large, the bill will go to 25 dollars
+
+if add_pepperoni == "Y":        #this if statement takes into account adding pepperoni, so it adds to bill based on answer
+    if size == "S":
+        bill += 2
+    else:
+        bill += 3
+
+if extra_cheese == "Y":         #same as the pepperoni if statement
+    bill += 1
+
+print(f"Your final bill is ${bill}.")
+
+###############################################################################################################
+
+#Logical Operators:
+#and 
+#or
+#not 
+
+#Logical operators allow you to check for multiple conditions within the same line of code.
+
+#Ex 1:
+if condition1 & condition2 & condition3:
+    do this
+else:
+    do this
+
+A and B         #A and B have to be True for the entire line of code to be true
+C or D          #C or D has to be True in order for the line of code to be true
+not E           #reverses a condition. Ex: a > 12, not a > 15 evaluates to True
+
+#Ex 2:
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+bill = 0                                                          #added in bill variable at 0
+
+if height >= 120:
+    print("You can ride the rollercoaster!")                      
+    age = int(input("What is your age? "))
+    if age < 12:
+        bill = 5                                                  #depending on conditions, the bill will be changed according to age
+        print("Child tickets are $5.")
+    elif age <= 18:
+        bill = 7
+        print("Youth tickets are $7.")
+    elif age >= 45 and age <= 55:                                 #adding a logical operator to catch the gap in between 45 and 55
+        print("Everything is going to be ok. Have a free ride on us!")
+    else:
+        bill = 12
+        print("Adult tickets are $12.")
+    
+    wants_photo = input("Do you want a photo taken? y or n? ")   #this variable is input at the same level as the age variable
+    if wants_photo == "y":
+        bill += 3           #or bill = bill + 3                  #if they want a photo taken, add 3 dollars to bill
+
+    print(f"You final bill is ${bill}.")
 
 else:
     print("Sorry but you're not tall enough to ride this ride...")
