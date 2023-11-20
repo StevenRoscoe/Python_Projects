@@ -1,3 +1,21 @@
+#FOR LOOP
 fruits = ["Apple", "Orange", "Banana", "Cherry"]
 for fruit in fruits:
     print("I love eating", fruits)
+
+#---------------------------------------------------------
+
+for number in range(10):
+    print(number)
+
+#---------------------------------------------------------
+
+#WHILE LOOP
+a = 5
+b = 1
+while a >= b:
+    b += 1
+print(b)
+
+#---------------------------------------------------------
+
